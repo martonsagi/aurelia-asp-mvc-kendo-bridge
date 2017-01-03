@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+
+<template>
+    <require from="aurelia-kendoui-bridge/grid/grid"></require>
+    <require from="aurelia-kendoui-bridge/grid/col"></require>
+    <require from="aurelia-kendoui-bridge/common/template"></require>
+
+    Kendo Grid started!
+    <br />
+
+    <ak-grid k-data-source.bind="datasource" k-pageable.bind="pageable" k-sortable.bind="true">
+        <ak-col k-title="Contact Name" k-field="ContactName">
+            <ak-template>
+                <div class='customer-photo' css="background: url('http://demos.telerik.com/kendo-ui/content/web/Customers/${CustomerID}.jpg');"></div>
+                <div class='customer-name'>${ContactName}</div>
+            </ak-template>
+        </ak-col>
+        <ak-col k-title="Contact Title" k-field="ContactTitle"></ak-col>
+        <ak-col k-title="Company Name" k-field="CompanyName"></ak-col>
+        <ak-col k-field="Country"></ak-col>
+    </ak-grid>
+
+</template>
